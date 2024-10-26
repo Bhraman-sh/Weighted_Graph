@@ -1,0 +1,22 @@
+[
+{
+  "directory": "/home/bhraman/Projects/Data_Structures/Weighted_Graph/build",
+  "command": "/usr/bin/cc  -I/home/bhraman/Projects/Data_Structures/Weighted_Graph/include  -o CMakeFiles/weighted_graph.dir/main.c.o -c /home/bhraman/Projects/Data_Structures/Weighted_Graph/main.c",
+  "file": "/home/bhraman/Projects/Data_Structures/Weighted_Graph/main.c"
+},
+{
+  "directory": "/home/bhraman/Projects/Data_Structures/Weighted_Graph/build",
+  "command": "/usr/bin/cc  -I/home/bhraman/Projects/Data_Structures/Weighted_Graph/include  -o CMakeFiles/weighted_graph.dir/src/graph.c.o -c /home/bhraman/Projects/Data_Structures/Weighted_Graph/src/graph.c",
+  "file": "/home/bhraman/Projects/Data_Structures/Weighted_Graph/src/graph.c"
+},
+{
+  "directory": "/home/bhraman/Projects/Data_Structures/Weighted_Graph/build",
+  "command": "/usr/bin/cc  -I/home/bhraman/Projects/Data_Structures/Weighted_Graph/include  -o CMakeFiles/weighted_graph.dir/src/queue.c.o -c /home/bhraman/Projects/Data_Structures/Weighted_Graph/src/queue.c",
+  "file": "/home/bhraman/Projects/Data_Structures/Weighted_Graph/src/queue.c"
+},
+{
+  "directory": "/home/bhraman/Projects/Data_Structures/Weighted_Graph/build",
+  "command": "/usr/bin/cc  -I/home/bhraman/Projects/Data_Structures/Weighted_Graph/include  -o CMakeFiles/weighted_graph.dir/src/stack.c.o -c /home/bhraman/Projects/Data_Structures/Weighted_Graph/src/stack.c",
+  "file": "/home/bhraman/Projects/Data_Structures/Weighted_Graph/src/stack.c"
+}
+]

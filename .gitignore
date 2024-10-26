@@ -1,0 +1,40 @@
+# Ignore build directories
+/build/
+/Build/
+/out/
+/bin/
+/Debug/
+/Release/
+/CMakeFiles/
+/CMakeCache.txt
+/cmake-build-debug/
+/cmake-build-release/
+
+# Ignore generated Makefiles and CMake build files
+Makefile
+CMakeFiles
+CMakeCache.txt
+cmake_install.cmake
+CTestTestfile.cmake
+
+# Ignore project build files
+*.cbp         # Code::Blocks project files
+*.sln         # Visual Studio project files
+*.ninja       # Ninja build system files
+*.vcxproj     # Visual Studio project files
+
+# Ignore auto-generated test files
+Testing/
+CTestTestfile.cmake
+CTestCostData.txt
+CTestCustom.cmake
+
+# Ignore logs
+*.log
+
+# Ignore temporary files
+*.swp
+*.swo
+*.tmp
+*.bak
+*~
