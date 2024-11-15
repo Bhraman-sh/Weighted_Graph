@@ -27,10 +27,6 @@ int main()
     printf("Original Graph\n");
     printGraph(graph);
 
-    struct Graph minimum_span;
-    minimum_span.node = NULL;
-
-    primsAlgorithm(graph, &minimum_span);
-    printf("\nThe minimum spanning tree of the graph\n");
-    printGraph(minimum_span);
+    struct dijkstra *output = NULL;
+    dijkstraAlgorithm(&graph, 1, output);
 }

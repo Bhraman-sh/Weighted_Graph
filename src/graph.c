@@ -277,6 +277,102 @@ void primsAlgorithm(struct Graph input_graph, struct Graph *output_graph)
     }
 }
 
+void dijkstraAlgorithm(struct Graph* graph, int starting_node, struct dijkstra *output)
+{
+    if (starting_node > graph->node_count)
+    {
+        printf("Starting node doesn't exit!\n");
+        return ;
+    }
+
+    output = (struct dijkstra*) malloc (sizeof(struct dijkstra) * graph->node_count);
+
+    initOutput(output, graph->node_count);
+    (output[starting_node-1]).weight = 0;
+
+    struct Node *curr_node;
+    struct Path *path;
+
+    printf("Before the loop\n");
+    for (int i = 1; i < graph->node_count; i++)
+    {
+        starting_node = 1 + findMinimumWeightNode(output, graph->node_count);
+        printf("Starting node: %d\n", starting_node);
+        curr_node = graph->node;
+        while (curr_node->node_number != starting_node)
+        {
+            curr_node = curr_node->next_node;
+        }
+
+        path = curr_node->path;
+
+        while(path != NULL)
+        {
+            float new_weight = path->weight + (output[curr_node->node_number -1].weight);
+            if ((new_weight < (output[path->node_number -1]).weight) || ((output[path->node_number -1]).weight == -1))
+            {
+                output[path->node_number -1].weight = new_weight;
+                output[path->node_number -1].prev = curr_node->node_number;
+            }
+
+            path = path->next_path;
+        }
+        printf("After iteration %d\n", i);
+    }
+    printf("After the loop\n");
+
+    printf("\n");
+    for (int i = 0; i < graph->node_count; i++)
+    {
+        printf("%d  %f  %d", i+1, (output[i]).weight, (output[i]).prev);
+        printf("\n");
+    }
+}
+
+void initOutput(struct dijkstra *output, int a)
+{
+    for(int i=0; i<a; i++)
+    {
+        (output[i]).done = 0;
+        (output[i]).weight = -1;
+        (output[i]).prev = 0;
+    }
+}
+
+int findMinimumWeightNode(struct dijkstra *output, int node_count)
+{
+    float min_weight;
+    int node_marker;
+    int first = 1;
+
+    for(int i = 0; i < node_count; ++i)
+    {
+        if (output[i].done == 0)
+        {
+            if(output[i].weight != -1)
+            {
+                if (first == 1)
+                {
+                    min_weight = output[i].weight;
+                    node_marker = i;
+                    first = 0;
+                }
+                else
+                {
+                    if(output[i].weight < min_weight)
+                    {
+                        min_weight = output[i].weight;
+                        node_marker = i;
+                    }
+                }
+            }
+        }
+    }
+
+    (output[node_marker]).done = 1;
+    return node_marker;
+}
+
 void deleteNode(struct Graph *graph, int node)
 {
     if (node > (*graph).node_count)

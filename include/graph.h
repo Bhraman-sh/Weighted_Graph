@@ -28,6 +28,14 @@ struct Graph
     struct Node *node;
 };
 
+// HELPER STRUCTURE TO STORE THE OUTPUT OF DIJKSTRA ALGORITHM
+struct dijkstra
+{
+    short int done;               // CURRENT NODE
+    float weight;           // TOTAL WEIGHT OF THE PATH TO THE NODE
+    int prev;               // PREVIOUS NODE IN THE PATH
+};
+
 // NEW NODE
 void addNode(struct Graph*);
 
@@ -41,9 +49,15 @@ int depthFirstTraversal(struct Graph, int);
 
 // CHECK IF THERE IS ANY CYCLE IN THE GRAPH;
 int checkCycle(struct Graph *);         // returns the number of cycles
+
 // MINNIMUM WEIGHT SPANNING TREE ALGORITHMS
 void primsAlgorithm(struct Graph, struct Graph*);                      // Simply print the tree
 void kruskalAlgorithm(struct Graph*);
+
+// MINNIMUM PATH ALGORITHMS 
+void dijkstraAlgorithm(struct Graph*, int, struct dijkstra *output);
+void initOutput(struct dijkstra*, int);
+int findMinimumWeightNode(struct dijkstra*, int);
 
 // DELETION
 void deleteNode(struct Graph*, int);
